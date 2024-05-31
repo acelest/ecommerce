@@ -45,7 +45,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url('/assets/images/image-2.svg');
+  background-image: url('/assets/images/bb.jpg');
 
   @include mid-break {
     background: none;
@@ -73,7 +73,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
- 
+
 
   @include mid-break {
     justify-content: flex-start;
