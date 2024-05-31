@@ -17,10 +17,15 @@ export const priceFromJSON = (priceJSON: string, quantity: number = 1, raw?: boo
 
       if (raw) return priceValue.toString()
 
-      price = (priceValue / 100).toLocaleString('en-US', {
-        style: 'currency',
-        currency: 'USD', // TODO: use `parsed.currency`
-      })
+      const currency = parsed.currency
+      if (currency === 'XAF') {
+        price = `FCFA ${(priceValue / 100).toLocaleString('fr-FR')}`
+      } else {
+        price = (priceValue / 100).toLocaleString('en-US', {
+          style: 'currency',
+          currency: currency,
+        })
+      }
 
       if (priceType === 'recurring') {
         price += `/${

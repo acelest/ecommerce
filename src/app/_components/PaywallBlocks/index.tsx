@@ -1,7 +1,7 @@
 'use client'
 
-import React, { useEffect } from 'react'
 import Link from 'next/link'
+import React, { useEffect } from 'react'
 
 import { Page } from '../../../payload/payload-types'
 import { PRODUCT_PAYWALL } from '../../_graphql/products'
@@ -83,11 +83,11 @@ export const PaywallBlocks: React.FC<{
           <Message
             message={
               <>
-                {`This content is gated behind a paywall. You must be `}
+                {`Ce contenu est protégé par paywall `}
                 <Link href={`/login?redirect=${encodeURIComponent(window.location.pathname)}`}>
                   logged in
                 </Link>
-                {` as an admin or have purchased this product to view this content.`}
+                {` en tant qu'administrateur vous avez acheté ce produit pour afficher ce contenu.`}
               </>
             }
           />
