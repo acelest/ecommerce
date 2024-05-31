@@ -1,5 +1,5 @@
 import React from 'react'
-import { FieldValues, UseFormRegister, Validate } from 'react-hook-form'
+import { FieldValues, UseFormRegister } from 'react-hook-form'
 
 import classes from './index.module.scss'
 
@@ -40,7 +40,7 @@ export const Input: React.FC<Props> = ({
             ? {
                 pattern: {
                   value: /\S+@\S+\.\S+/,
-                  message: 'Please enter a valid email',
+                  message: 'Veuillez entrer un email valide',
                 },
               }
             : {}),
@@ -50,7 +50,7 @@ export const Input: React.FC<Props> = ({
       {error && (
         <div className={classes.errorMessage}>
           {!error?.message && error?.type === 'required'
-            ? 'This field is required'
+            ? 'Ce champ est obligatoire'
             : error?.message}
         </div>
       )}
