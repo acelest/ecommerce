@@ -1,5 +1,5 @@
-import React, { Suspense } from 'react'
 import { Metadata } from 'next'
+import { Suspense } from 'react'
 
 import { Gutter } from '../../_components/Gutter'
 import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
@@ -18,8 +18,8 @@ export default async function OrderConfirmation() {
 }
 
 export const metadata: Metadata = {
-  title: 'Order Confirmation',
-  description: 'Your order has been confirmed.',
+  title: 'Confirmation de commande',
+  description: 'Votre commande a été confirmée..',
   openGraph: mergeOpenGraph({
     title: 'Order Confirmation',
     url: '/order-confirmation',

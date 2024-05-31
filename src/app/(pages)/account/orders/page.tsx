@@ -1,4 +1,3 @@
-import React from 'react'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -15,7 +14,7 @@ import classes from './index.module.scss'
 export default async function Orders() {
   const { token } = await getMeUser({
     nullUserRedirect: `/login?error=${encodeURIComponent(
-      'You must be logged in to view your orders.',
+      'Vous devez être connecté pour consulter vos commandes.',
     )}&redirect=${encodeURIComponent('/orders')}`,
   })
 
@@ -43,9 +42,9 @@ export default async function Orders() {
 
   return (
     <div>
-      <h5>My Orders</h5>
+      <h5>Mes commandes</h5>
       {(!orders || !Array.isArray(orders) || orders?.length === 0) && (
-        <p className={classes.noOrders}>You have no orders.</p>
+        <p className={classes.noOrders}>Vous n'avez aucune commande.</p>
       )}
       <RenderParams />
       {orders && orders.length > 0 && (
@@ -58,19 +57,19 @@ export default async function Orders() {
                   <div className={classes.itemMeta}>
                     <p>
                       {'Total: '}
-                      {new Intl.NumberFormat('en-US', {
+                      {new Intl.NumberFormat('fr-FR', {
                         style: 'currency',
-                        currency: 'usd',
+                        currency: 'XAF',
                       }).format(order.total / 100)}
                     </p>
-                    <p className={classes.orderDate}>{`Ordered On: ${formatDateTime(
+                    <p className={classes.orderDate}>{`Commandé le: ${formatDateTime(
                       order.createdAt,
                     )}`}</p>
                   </div>
                 </div>
                 <Button
                   appearance="default"
-                  label="View Order"
+                  label="Voir l'ordre"
                   className={classes.button}
                   el="link"
                   href={`/account/orders/${order.id}`}
@@ -85,8 +84,8 @@ export default async function Orders() {
 }
 
 export const metadata: Metadata = {
-  title: 'Orders',
-  description: 'Your orders.',
+  title: 'Commandes.',
+  description: 'Vos commandes.',
   openGraph: mergeOpenGraph({
     title: 'Orders',
     url: '/orders',

@@ -1,8 +1,8 @@
 'use client'
 
-import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import React, { useState } from 'react'
 
 import { Media } from '../../../_components/Media'
 import { Price } from '../../../_components/Price'
@@ -17,21 +17,21 @@ const CartItem = ({ product, title, metaImage, qty, addItemToCart }) => {
     const updatedQty = quantity > 1 ? quantity - 1 : 1
 
     setQuantity(updatedQty)
-    addItemToCart({ product, quantity: Number(updatedQty) })
+    addItemToCart({ product, quantité: Number(updatedQty) })
   }
 
   const incrementQty = () => {
     const updatedQty = quantity + 1
 
     setQuantity(updatedQty)
-    addItemToCart({ product, quantity: Number(updatedQty) })
+    addItemToCart({ product, quantité: Number(updatedQty) })
   }
 
   const enterQty = (e: React.ChangeEvent<HTMLInputElement>) => {
     const updatedQty = Number(e.target.value)
 
     setQuantity(updatedQty)
-    addItemToCart({ product, quantity: Number(updatedQty) })
+    addItemToCart({ product, quantité: Number(updatedQty) })
   }
 
   return (

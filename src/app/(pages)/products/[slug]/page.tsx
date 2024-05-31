@@ -1,4 +1,3 @@
-import React from 'react'
 import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
@@ -45,14 +44,14 @@ export default async function Product({ params: { slug } }) {
         blocks={[
           {
             blockType: 'relatedProducts',
-            blockName: 'Related Product',
+            blockName: 'Produits similaires',
             relationTo: 'products',
             introContent: [
               {
                 type: 'h3',
                 children: [
                   {
-                    text: 'Related Products',
+                    text: 'Produits similaires',
                   },
                 ],
               },
