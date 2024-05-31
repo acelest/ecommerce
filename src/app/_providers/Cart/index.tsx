@@ -1,6 +1,6 @@
 'use client'
 
-import React, {
+import {
   createContext,
   useCallback,
   useContext,
@@ -175,7 +175,7 @@ export const CartProvider = props => {
 
         syncCartToPayload()
       } catch (e) {
-        console.error('Error while syncing cart to Payload.') // eslint-disable-line no-console
+        console.error('Error..') // eslint-disable-line no-console
       }
     } else {
       localStorage.setItem('cart', JSON.stringify(flattenedCart))
@@ -239,9 +239,9 @@ export const CartProvider = props => {
       }, 0) || 0
 
     setTotal({
-      formatted: (newTotal / 100).toLocaleString('en-US', {
+      formatted: (newTotal / 100).toLocaleString('fr-FR', {
         style: 'currency',
-        currency: 'USD',
+        currency: 'XAF',
       }),
       raw: newTotal,
     })
