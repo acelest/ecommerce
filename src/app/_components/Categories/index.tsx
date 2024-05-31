@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from 'next/link'
 
 import { Category } from '../../../payload/payload-types'
@@ -10,8 +9,8 @@ const Categories = ({ categories }: { categories: Category[] }) => {
   return (
     <section className={classes.container}>
       <div className={classes.titleWrapper}>
-        <h3>Shop by Categories</h3>
-        <Link href="/products">Show All</Link>
+        <h3>Acheter par catégories</h3>
+        <Link href="/products">Afficher tout..</Link>
       </div>
 
       <div className={classes.list}>
