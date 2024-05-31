@@ -1,5 +1,5 @@
-import React from 'react'
 import Image from 'next/image'
+import React from 'react'
 
 import { Product } from '../../../payload/payload-types'
 import { useCart } from '../../_providers/Cart'
@@ -17,7 +17,7 @@ export const RemoveFromCartButton: React.FC<{
   const productIsInCart = isProductInCart(product)
 
   if (!productIsInCart) {
-    return <div>Item is not in the cart</div>
+    return <div>L'article n'est pas dans le panier.</div>
   }
 
   return (
@@ -30,7 +30,7 @@ export const RemoveFromCartButton: React.FC<{
     >
       <Image
         src="/assets/icons/delete.svg"
-        alt="delete"
+        alt="Supprimer"
         width={24}
         height={24}
         className={classes.qtnBt}
